@@ -59,7 +59,10 @@ def get_data(V):
     df["Age"]=df["Age"]/df["Age"].max()
     df["Fare"]=df["Fare"]/df["Fare"].max()
     df["Family_size"]=df["Family_size"]/df["Family_size"].max()
-    
+    #df["Age"]=(df["Age"]-df["Age"].mean())/df["Age"].std()
+    #df["Fare"]=(df["Fare"]-df["Fare"].mean())/df["Fare"].std()
+    #df["Family_size"]=(df["Family_size"]-df["Family_size"].mean())/df["Family_size"].std()
+
     X = np.asarray(df.ix[:,"Sex":])
     if V =="train":
         return X,T
